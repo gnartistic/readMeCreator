@@ -1,7 +1,8 @@
 # readMeCreator
   [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
-  deployment:  
+  deployment:  [![Click this to view walkthrough video](/assets/images/PlaybackSnapshot.png)](https://vimeo.com/725074864)
+
   ## Description
   
   This is a node.js applicatioin that creates a README.md file dynamically for a github repository based on user input. It will ask a series of questions to captured the necessary data to be displayed in the file.
