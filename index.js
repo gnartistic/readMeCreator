@@ -9,7 +9,7 @@ const questions = [
         // project file name
         type: 'input',
         message: 'Enter the filename of your project',
-        name: 'filename',
+        name: 'fileName',
     },
     {
         // title of project
@@ -60,17 +60,17 @@ const questions = [
         name: 'license',
         choices: [
             "None",
-            "Apache 2.0 License",
             "BSD 3-Clause License",
-            "MIT License",
+            "Apache 2.0 License",
             "IBM Public License Version 1.0",
+            "MIT License",
         ]
     },
     {
         // tests
         type: 'input',
         message: 'Enter test conditions',
-        name: 'test',
+        name: 'testing',
     },
     {
         // contributions
