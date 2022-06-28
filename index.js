@@ -14,31 +14,31 @@ const questions = [
     {
         // title of project
         type: 'input',
-        message: 'Enter the titl of your project',
+        message: 'Enter the title of your project',
         name: 'title',
     },
     {
         // deployed URL
         type: 'input',
-        message: 'Enter the deployed link to the project (if applicable, otherwise leave blank)',
+        message: 'Enter the deployed link to the project (if applicable)',
         name: 'deployedURL',
     },
     {
         // description
         type: 'input',
-        message: 'Enter a desciption of the porject',
+        message: 'Enter a desciption of the project',
         name: 'description',
     },
     {
         // install
         type: 'input',
-        message: 'Enter the best install method',
+        message: 'Enter the install method',
         name: 'install',
     },
     {
         // install code
         type: 'input',
-        message: 'Enter an example of an installation code (if applicable, otherwise leave blank)',
+        message: 'Enter an example of an installation code (if applicable)',
         name: 'install_code',
     },
     {
@@ -50,7 +50,7 @@ const questions = [
     {
         // usage code
         type: 'input',
-        message: 'Enter an example of usage code (if applicable, otherwise leave blank)',
+        message: 'Enter an example of usage code (if applicable)',
         name: 'usage_code',
     },
     {
@@ -75,7 +75,7 @@ const questions = [
     {
         // contributions
         type: 'input',
-        message: 'Enter your projects contribution prefferences',
+        message: 'Enter your projects contribution preferences',
         name: 'contributions',
     },
     {
@@ -87,7 +87,7 @@ const questions = [
     {
         // email
         type: 'input',
-        message: 'Enter your preffered contact email address',
+        message: 'Enter your prefered contact email address',
         name: 'email',
     }
 ];
@@ -95,12 +95,15 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
         fs.writeFile(`${fileName}.md`, generateMarkdown(data), (err) =>
-            err ? console.error("error") : console.log("success"))
+            err ? console.error("error") : console.log("Data captured!"))
 }
 
 // TODO: Create a function to initialize app
 function init() {
-
+    inquirer.prompt(questions)
+        .then((response) =>
+            writeToFile(response.fileName, response)
+        );
 }
 
 // Function call to initialize app
